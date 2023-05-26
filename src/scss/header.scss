@@ -1,0 +1,168 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-bottom: 1px solid #d9fff5;
+  padding: 0 16px;
+}
+.header__contacts {
+  display: none;
+  &.open {
+    display: flex;
+    gap: 16px;
+    position: absolute;
+    bottom: -360px;
+    left: 16px;
+    z-index: 6;
+  }
+}
+
+.header__menu {
+  display: flex;
+}
+
+.header__burger-btn {
+  height: 40px;
+  margin: 24px 16px 24px 0;
+  &::after {
+    content: url(../img/burger.svg);
+    top: 0;
+    left: 0;
+  }
+}
+
+.header__burger-btn.open::after {
+  content: url(../img/close.svg);
+  position: absolute;
+  top: 24px;
+  left: 16px;
+  z-index: 6;
+}
+
+.header__logo {
+  align-self: center;
+  &.open {
+    position: absolute;
+    top: 16px;
+    left: 72px;
+    z-index: 6;
+  }
+}
+
+.header__servise {
+  display: flex;
+  justify-content: space-between;
+
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 20px;
+
+  & span {
+    display: none;
+  }
+  &.open {
+    display: none;
+  }
+}
+
+.servise__check {
+  margin-left: 16px;
+}
+.servise::before {
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 32px;
+  background-color: #eaeaea;
+  border-radius: 1px;
+  bottom: 24px;
+  left: -20px;
+}
+
+/* //////////////////////////////////////////////////////////////////////*/
+
+@media (min-width: 768px) {
+  .header {
+    padding: 0 24px;
+  }
+  .header__burger-btn {
+    margin-right: 43px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 32px;
+      background-color: #eaeaea;
+      border-radius: 1px;
+      bottom: 6px;
+      left: 60px;
+    }
+  }
+
+  .header__servise {
+    margin-left: 42px;
+  }
+
+  .header__links {
+    display: flex;
+  }
+  .header__contacts {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 20px;
+  }
+
+  .servise::before {
+    bottom: 28px;
+  }
+  .header__message,
+  .header__profile {
+    margin-left: 16px;
+  }
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+
+@media (min-width: 1120px) {
+  .container {
+    width: 1120px;
+  }
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 0px;
+  }
+
+  .header__menu,
+  .header__contacts {
+    display: none;
+  }
+
+  .header__servise {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 42px;
+    padding-right: 8px;
+    & span {
+      display: block;
+      margin-right: 8px;
+    }
+  }
+
+  .servise__repair {
+    display: flex;
+    align-items: center;
+  }
+
+  .servise__check {
+    display: flex;
+    align-items: center;
+  }
+
+  .servise::before {
+    display: none;
+  }
+}

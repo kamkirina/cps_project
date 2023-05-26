@@ -1,0 +1,129 @@
+.header__burger {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+}
+
+.burger__container {
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 320px;
+  background-color: #fff;
+  margin-right: auto;
+  padding: 0 24px;
+  overflow: auto;
+  z-index: 5;
+  box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
+    16px 0px 52px rgba(14, 24, 80, 0.2);
+}
+
+.burger__container.open {
+  left: 0;
+}
+
+.burger__header {
+  display: flex;
+  justify-content: space-between;
+  height: 88px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.burger__search {
+  margin-left: auto;
+}
+
+.burger__close:hover,
+.burger__search:hover,
+.burger__links a:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.3 ease;
+}
+
+.burger__nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 88px;
+}
+
+.burger__nav-item {
+  margin-bottom: 32px;
+}
+
+.burger__nav-item:hover {
+  cursor: pointer;
+  color: #7e7e82;
+  transition: all 0.3s ease;
+}
+
+.burger__nav-item:last-child {
+  margin-bottom: 0;
+}
+
+.burger__nav-item.active {
+  color: #7e7e82;
+  position: relative;
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  display: inline-block;
+  width: 4px;
+  height: 32px;
+  top: -3px;
+  left: -24px;
+  background: #41f6d7;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.burger__links a {
+  margin-right: 16px;
+}
+
+.burger__links a:last-child {
+  margin-right: 0;
+}
+
+.burger__links {
+  margin-bottom: 16px;
+}
+.burger__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 22px;
+}
+
+.burger__tel {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.6px;
+}
+
+.burder__lang {
+  margin-bottom: 32px;
+}
+
+.burger__lang-link {
+  margin-right: 7px;
+}
+
+.burger__lang-link:last-child {
+  margin-right: 0;
+}
+
+.burger__lang-link.active {
+  color: #7e7e82;
+}
+
+/*//////////////////////////////////////////////////*/
+
+@media (min-width: 360px) {
+  .burger__container {
+    width: 360px;
+  }
+}

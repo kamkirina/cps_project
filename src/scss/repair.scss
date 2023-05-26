@@ -1,0 +1,15 @@
+.slider__item--repair {
+  height: 160px;
+}
+
+.slider__subtitle {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  &::before {
+    position: absolute;
+    content: url(../img/go.svg);
+    right: 16px;
+    bottom: 8px;
+  }
+}

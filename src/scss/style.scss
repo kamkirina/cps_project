@@ -1,17 +1,32 @@
-$bgColor: #24292e;
-$text: #fff;
+@import 'normalize';
+@import 'variables';
+@import 'header';
+@import 'description';
+@import 'burger';
+@import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/modules/pagination/pagination';
+@import 'slider';
+@import 'repair';
 
 @font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+  font-family: 'TTLakes';
+  font-style: normal;
+  font-weight: 400;
+  src: local('TTLake'),
+    url('/fonts/TTLakes/TTLakes-Regular.woff') format('woff');
 }
 
 body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
+  font-family: 'TTLakes', sans-serif;
   color: $text;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  min-width: 320px;
+  margin: 0 auto;
 }

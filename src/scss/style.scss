@@ -30,3 +30,16 @@ body {
   min-width: 320px;
   margin: 0 auto;
 }
+
+.modal-blur {
+  filter: blur(30px);
+}
+
+//////////////////////////
+@media (min-width: 1440px) {
+  .container {
+    width: 1120px;
+    margin-left: auto;
+    margin-right: 0;
+  }
+}

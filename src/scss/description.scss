@@ -60,7 +60,7 @@
 }
 
 .description__text {
-  text-align: justify;
+  text-align: start;
   padding: 0 16px;
   height: 164px;
   overflow: hidden;
@@ -113,10 +113,10 @@
 
   .description__text {
     padding-right: 48px;
-    padding-left: 24px;
-    height: 230px;
+    height: 306px;
     overflow: hidden;
     line-height: 20px;
+    overflow-wrap: break-word;
   }
 
   .read-more-btn {
@@ -141,7 +141,7 @@
 
 /* ////////////////////////////////////////////////////////////////// */
 
-@media (min-width: 1120px) {
+@media (min-width: 1440px) {
   .container {
     width: 1120px;
   }

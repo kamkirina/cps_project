@@ -30,7 +30,6 @@
 }
 
 .slider__show,
-.slider__show-tablet,
 .slider__hide {
   display: none;
 }
@@ -88,42 +87,35 @@
   }
   .slider__swiper {
     padding: 24px 0 0 24px;
-    height: 276px;
-    overflow: hidden;
-    padding-bottom: 78px;
-  }
-
-  .swiper--open {
-    height: 435px;
-    overflow: visible;
   }
 
   .slider__wrapper {
-    margin-bottom: 82px;
     display: flex;
     flex-wrap: wrap;
-    row-gap: 16px;
-    column-gap: 24px;
+    gap: 24px;
+    margin-bottom: 80px;
   }
-
   .slider__item {
-    width: 224px !important;
-    margin: 0;
+    width: 224px;
+    margin-bottom: 0;
   }
 
-  .slider__item:nth-child(3n) {
-    margin-right: 0;
+  .slider__item.hidden {
+    display: none;
   }
-  .slider__show-tablet {
-    display: block;
+
+  .slider__show {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    display: flex;
+    align-items: center;
     color: #1b1c21;
     font-weight: 500;
-    margin-right: 400px;
     margin-top: 8px;
-    margin-bottom: 34px;
   }
 
-  .slider__show-tablet--disable {
+  .slider__show--disable {
     display: none;
   }
   .show::before {
@@ -133,9 +125,6 @@
   }
 
   .slider__hide {
-    position: absolute;
-    bottom: -70px;
-    left: 0;
     display: none;
     font-weight: 500;
     color: #1b1c21;
@@ -149,41 +138,29 @@
 
   .slider__hide--active {
     display: block;
+    position: absolute;
+    bottom: -52px;
+    left: 0;
   }
 }
 
 /*///////////////////////////////////////////////////////// */
 
-@media (min-width: 1124px) {
+@media (min-width: 1120px) {
   .container {
-    width: 1124px;
+    width: 1120px;
   }
   .sliider__title {
     padding: 0 32px;
   }
 
-  .slider__show-tablet {
-    display: none;
-  }
-
-  .slider__title {
-    background: linear-gradient(270deg, #f8f8f8 0%, #ffffff 98.61%);
-  }
-
   .slider__swiper {
     padding-left: 32px;
     padding-right: 30px;
-    height: 266px;
-    padding-bottom: 108px;
-    overflow: hidden;
-  }
-
-  .swiper--open {
-    height: 360px;
   }
 
   .slider__wrapper {
-    column-gap: 32px;
+    column-gap: 30px;
   }
 
   .slider__item {
@@ -191,12 +168,7 @@
   }
 
   .slider__show {
-    display: block;
-    margin-right: 800px;
-    margin-top: 8px;
-    margin-bottom: 34px;
-    font-weight: 500;
-    color: #1b1c21;
+    bottom: -60px;
   }
 
   .slider__show--disable {
@@ -205,7 +177,7 @@
 
   .slider__hide {
     display: none;
-    bottom: -94px;
+    bottom: -60px;
   }
   .slider__hide--active {
     display: block;

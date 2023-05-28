@@ -11,10 +11,22 @@
 
 .slider__swiper {
   background-color: #f2f2f2;
-  padding: 0 8px;
+  padding: 16px;
 }
-.slider__wrapper {
-  padding-left: 16px;
+
+.slider__swiper::after {
+  position: absolute;
+  content: '';
+  height: 81px;
+  width: 24px;
+  background: linear-gradient(
+    270deg,
+    #f8f8f8 16.84%,
+    rgba(248, 248, 248, 0.0001) 100%
+  );
+  top: 12px;
+  right: 0px;
+  z-index: 8;
 }
 
 .slider__show,
@@ -23,30 +35,36 @@
   display: none;
 }
 .slider__item {
-  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   background-color: #fff;
   height: 72px;
   border: 1px solid #eaeaea;
   border-radius: 6px;
-  margin-top: 16px;
   margin-bottom: 8px;
+  &::before {
+    content: url(../img/go.svg);
+    position: absolute;
+    right: 16px;
+    top: 16px;
+  }
 }
 
-.slider__logo {
-  width: auto !important;
-  align-self: center;
+.swiper-slide-prev,
+.swiper-slide-active {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .slider__go {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  cursor: pointer;
   padding: 16px;
 }
 
 .swiper-pagination {
   position: static;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
 .swiper-pagination-bullet {

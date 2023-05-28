@@ -7,19 +7,24 @@
 .burger__container {
   position: absolute;
   top: 0;
-  left: -120%;
+  left: 0;
+  transform: translateX(-200%);
   width: 320px;
   background-color: #fff;
   margin-right: auto;
-  padding: 0 24px;
+  padding: 0 24px 28px;
   overflow: auto;
   z-index: 5;
   box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
     16px 0px 52px rgba(14, 24, 80, 0.2);
+  transition: all ease;
+  transition-duration: 1s;
 }
 
 .burger__container.open {
-  left: 0;
+  transform: translateX(0);
+  transition: all ease;
+  transition-duration: 1s;
 }
 
 .burger__header {

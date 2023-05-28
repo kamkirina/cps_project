@@ -20,8 +20,9 @@ function swiperMode() {
         // Optional parameters
         direction: 'horizontal',
         loop: true,
-        slidesPerView: 1.3,
-        spaceBetween: 16,
+        slidesPerView: 1.2,
+        spaceBetween: 23,
+        centeredSlides: false,
 
         // If we need pagination
         pagination: {
@@ -52,6 +53,7 @@ window.addEventListener('resize', function () {
 })
 
 const burgerBtn = document.querySelector('.header__burger-btn')
+const burgerContainer = document.querySelector('.header')
 
 burgerBtn.addEventListener('click', () => {
   burgerBtn.classList.toggle('open')
@@ -59,4 +61,16 @@ burgerBtn.addEventListener('click', () => {
   document.querySelector('.burger__container').classList.toggle('open')
   document.querySelector('.header__contacts').classList.toggle('open')
   document.querySelector('.header__servise').classList.toggle('open')
+})
+
+document.addEventListener('click', (e) => {
+  const withinBoundaries = e.composedPath().includes(burgerContainer)
+
+  if (!withinBoundaries) {
+    burgerBtn.classList.toggle('open')
+    document.querySelector('.header__logo').classList.toggle('open')
+    document.querySelector('.burger__container').classList.toggle('open')
+    document.querySelector('.header__contacts').classList.toggle('open')
+    document.querySelector('.header__servise').classList.toggle('open')
+  }
 })

@@ -10,6 +10,7 @@
     <title>CPS project</title>
   </head>
   <body>
+    <div class="wrapper">
     <header>
         <div class="container">
           <div class="header">
@@ -22,6 +23,7 @@
             <div class="header__burger">
               <div class="burger__container">
                 <div class="burger__header">
+                  <button class="burger__btn" type="button"></button>
                   <a class="burger__logo" href="#">
                     <img src="./img/logo.svg" alt="cps" />
                   </a>
@@ -278,7 +280,87 @@
               <div class="swiper-pagination"></div>
             </div>
         </section>
+        <section class="price">
+          <div class="container">
+            <h2 class="price__title slider__title">
+              Цены на услуги
+            </h2>
+            <div class="price__swiper slider__swiper swiper">
+              <!-- Additional required wrapper -->
+              <div class="price__title">
+              <h4>Ремонтные услуги</h4>
+              <h4>Цена</h4>
+              <h4>Срок</h4>
+            </div>
+              <div class="price__wrapper slider__wrapper swiper-wrapper">
+                <!-- Slides -->
+                <div class="slider__item slider__item--price swiper-slide">
+                  <h4 class="price__subtitle">Ремонтные услуги</h4>
+                 <div class="price__text">Тестирование с выдачей технического заключения</div>
+                 <h4 class="price__subtitle">Цена</h4>
+                 <div class="price__text">Бесплатно</div>
+                 <h4 class="price__subtitle">Срок</h4>
+                 <div class="price__text">30-120 мин</div>
+                 <button class="price__btn">Заказать</button>
+                </div>
+                <div class="slider__item slider__item--price swiper-slide">
+                  <h4 class="price__subtitle">Ремонтные услуги</h4>
+                 <div class="price__text">Диагностика</div>
+                 <h4 class="price__subtitle">Цена</h4>
+                 <div class="price__text">Бесплатно</div>
+                 <h4 class="price__subtitle">Срок</h4>
+                 <div class="price__text">30 мин</div>
+                 <button class="price__btn">Заказать</button>
+                </div>
+                <div class="slider__item slider__item--price swiper-slide">
+                  <h4 class="price__subtitle">Ремонтные услуги</h4>
+                 <div class="price__text price__text--name">Замена дисплея</div>
+                 <h4 class="price__subtitle">Цена</h4>
+                 <div class="price__text">1 000 ₽</div>
+                 <h4 class="price__subtitle">Срок</h4>
+                 <div class="price__text">30-120 мин</div>
+                 <button class="price__btn">Заказать</button>
+                </div>
+                <div class="slider__item slider__item--price swiper-slide">
+                  <h4 class="price__subtitle">Ремонтные услуги</h4>
+                 <div class="price__text price__text--name">Замена полифонического динамика</div>
+                 <h4 class="price__subtitle">Цена</h4>
+                 <div class="price__text">1 000 ₽</div>
+                 <h4 class="price__subtitle">Срок</h4>
+                 <div class="price__text">30-120 мин</div>
+                 <button class="price__btn">Заказать</button>
+                </div>
+                <div class="slider__item slider__item--price swiper-slide">
+                <h4 class="price__subtitle">Ремонтные услуги</h4>
+               <div class="price__text price__text--name">Замена программного обеспечения</div>
+               <h4 class="price__subtitle">Цена</h4>
+               <div class="price__text">1 000 ₽</div>
+               <h4 class="price__subtitle">Срок</h4>
+               <div class="price__text">30-120 мин</div>
+               <button class="price__btn">Заказать</button>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+            <div class="price__content">
+              <div class="price__descr">
+                Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.
+              </div>
+              <a href="#" class="price__download">Получить коммерческое предложение</a>
+            </div>
+          </div>
+          </section>
       </main>
-      <footer></footer>
+      <footer>
+        <div class="container">
+          <div class="footer__content">
+        <div class="footer__copy">© 2019 CPS<br>
+          Разработано командой Apesong </div>
+          <div class="footer__conf">Политика конфиденциальности</div>
+          <div class="footer__offer">Информация, размещенная на данной странице, не является публичной офертой</div>
+        </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

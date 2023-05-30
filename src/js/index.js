@@ -56,15 +56,25 @@ window.addEventListener('resize', function () {
 /* //////////////// Burger menu //////////////////////////////*/
 
 const burgerBtn = document.querySelector('.header__burger-btn')
+const burgerClose = document.querySelector('.burger__btn')
 const burgerContainer = document.querySelector('.header')
 
 burgerBtn.addEventListener('click', () => {
-  burgerBtn.classList.toggle('open')
-  document.querySelector('.header__logo').classList.toggle('open')
-  document.querySelector('.burger__container').classList.toggle('open')
-  document.querySelector('.header__contacts').classList.toggle('open')
-  document.querySelector('.header__servise').classList.toggle('open')
-  main.classList.toggle('modal-blur')
+  burgerBtn.classList.add('open')
+  document.querySelector('.header__logo').classList.add('open')
+  document.querySelector('.burger__container').classList.add('open')
+  document.querySelector('.header__contacts').classList.add('open')
+  document.querySelector('.header__servise').classList.add('open')
+  main.classList.add('modal-blur')
+})
+
+burgerClose.addEventListener('click', () => {
+  burgerBtn.classList.remove('open')
+  document.querySelector('.header__logo').classList.remove('open')
+  document.querySelector('.burger__container').classList.remove('open')
+  document.querySelector('.header__contacts').classList.remove('open')
+  document.querySelector('.header__servise').classList.remove('open')
+  main.classList.remove('modal-blur')
 })
 
 document.addEventListener('click', (e) => {
@@ -99,7 +109,7 @@ function showSlides() {
       itemsRpr[i].classList.add('hidden')
     }
   }
-  if (window.innerWidth >= 1440) {
+  if (window.innerWidth >= 1024) {
     numberBrands = 8
     numberRepair = 4
     itemsBrand.forEach((e) => {

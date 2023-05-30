@@ -7,6 +7,8 @@
 @import '../../node_modules/swiper/modules/pagination/pagination';
 @import 'slider';
 @import 'repair';
+@import 'price';
+@import 'footerContent';
 
 @font-face {
   font-family: 'TTLakes';
@@ -26,11 +28,6 @@ body {
   padding: 0;
 }
 
-.container {
-  min-width: 320px;
-  margin: 0 auto;
-}
-
 .modal-blur {
   filter: blur(30px);
 }
@@ -41,5 +38,14 @@ body {
     width: 1120px;
     margin-left: auto;
     margin-right: 0;
+  }
+}
+
+/*//////////////////////////////////////////////////*/
+
+@media (min-width: 1520px) {
+  .wrapper {
+    width: 1520px;
+    margin: 0 auto;
   }
 }

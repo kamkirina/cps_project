@@ -1,0 +1,39 @@
+.footer__content {
+  background-color: $bgSection;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  line-height: 16px;
+  text-align: center;
+  color: $subTitle;
+  opacity: 0.72;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.slider__swiper::after {
+  height: 195px;
+}
+
+////////////////////////////////////////////////
+
+@media (min-width: 768px) {
+  .footer__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: right;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .footer__copy {
+    text-align: left;
+  }
+}
+
+////////////////////////////////////////////////
+
+@media (min-width: 1024px) {
+  .footer__conf {
+    text-align: center;
+  }
+}

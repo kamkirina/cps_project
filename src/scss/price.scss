@@ -1,0 +1,129 @@
+.slider__item--price {
+  padding: 16px 0 16px 0;
+  width: 260px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.price__subtitle {
+  margin-left: 16px;
+  line-height: 16px;
+  color: $subTitle;
+  mix-blend-mode: normal;
+  opacity: 0.72;
+}
+
+.price__title {
+  display: none;
+}
+
+.price__text {
+  margin-bottom: 16px;
+  margin-left: 16px;
+}
+.price__btn {
+  align-self: end;
+  margin-top: -46px;
+  background: #ff3e79;
+  border-radius: 16px;
+  font-size: 12px;
+  line-height: 24px;
+  text-align: right;
+  letter-spacing: -0.15px;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 4px 17px 4px 12px;
+  margin-right: 16px;
+  &::after {
+    content: url(../img/arrow.svg);
+    margin-left: 17px;
+  }
+}
+
+.price__content {
+  background-color: $bgSection;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #d9fff5;
+}
+
+.price__descr {
+  line-height: 20px;
+  margin-bottom: 20px;
+  width: 285px;
+}
+
+.price__download {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  width: 192px;
+  &::after {
+    content: url(../img/Line.svg);
+    margin-left: 8px;
+  }
+}
+
+////////////////////////////////////////////////
+
+@media (min-width: 768px) {
+  .slider__item--price {
+    display: grid;
+    grid-template-columns: 50% 1fr 1fr 18%;
+    width: 720px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0;
+    & h4 {
+      display: none;
+    }
+  }
+  .price__content {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .price__wrapper {
+    gap: 0;
+    margin-bottom: 24px;
+  }
+
+  .price__title {
+    display: grid;
+    grid-template-columns: 50% 1fr 1fr 18%;
+    padding-left: 24px;
+    margin-bottom: 16px;
+  }
+  .price__text {
+    margin-bottom: 0;
+  }
+  .price__btn {
+    margin-top: 0;
+  }
+  .price__descr {
+    width: 422px;
+  }
+  .price__download {
+    width: auto;
+  }
+}
+
+////////////////////////////////////////////////
+
+@media (min-width: 1024px) {
+  .slider__item--price {
+    width: 976px;
+  }
+}
+
+////////////////////////////////////////////////
+
+@media (min-width: 1440px) {
+  .slider__item--price {
+    width: 1058px;
+  }
+}

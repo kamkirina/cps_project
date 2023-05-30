@@ -1,3 +1,8 @@
+.container {
+  min-width: 320px;
+  margin: 0 auto;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -12,7 +17,7 @@
     display: flex;
     gap: 16px;
     position: absolute;
-    bottom: -410px;
+    bottom: -350px;
     left: 22px;
     z-index: 6;
   }
@@ -31,11 +36,7 @@
 }
 
 .header__burger-btn.open::after {
-  content: url(../img/close.svg);
-  position: absolute;
-  top: 24px;
-  left: 16px;
-  z-index: 6;
+  display: none;
 }
 
 .header__logo {
@@ -78,6 +79,9 @@
 /* //////////////////////////////////////////////////////////////////////*/
 
 @media (min-width: 768px) {
+  .container {
+    width: 768px;
+  }
   .header {
     padding: 0 24px;
   }
@@ -120,9 +124,17 @@
 
 /* ////////////////////////////////////////////////////////////////// */
 
-@media (min-width: 1440px) {
+@media (min-width: 1024px) {
   .container {
-    width: 1120px;
+    width: 1024px;
+  }
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+
+@media (min-width: 1366px) {
+  .container {
+    margin-right: 0;
   }
   .header {
     display: flex;
@@ -131,8 +143,14 @@
     height: 0px;
   }
 
-  .header__menu,
   .header__contacts {
+    position: absolute;
+    left: 24px;
+    bottom: -600px;
+    z-index: 10;
+  }
+
+  .header__menu {
     display: none;
   }
 
@@ -159,5 +177,13 @@
 
   .servise::before {
     display: none;
+  }
+}
+
+/* ////////////////////////////////////////////////////////////////// */
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1120px;
   }
 }

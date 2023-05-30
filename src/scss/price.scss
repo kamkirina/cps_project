@@ -26,6 +26,10 @@
 .price__btn {
   align-self: end;
   margin-top: -46px;
+  margin-right: 16px;
+}
+
+.pink-btn {
   background: #ff3e79;
   border-radius: 16px;
   font-size: 12px;
@@ -35,7 +39,6 @@
   text-transform: uppercase;
   color: #ffffff;
   padding: 4px 17px 4px 12px;
-  margin-right: 16px;
   &::after {
     content: url(../img/arrow.svg);
     margin-left: 17px;

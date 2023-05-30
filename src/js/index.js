@@ -1,5 +1,6 @@
 import '../scss/style.scss'
 import Swiper, { Navigation, Pagination } from 'swiper'
+
 const main = document.querySelector('main')
 /* Swiper
  **************************************************************/
@@ -181,4 +182,79 @@ hideRprBtn.addEventListener('click', (event) => {
     .classList.remove('slider__hide--active')
 
   showSlides()
+})
+
+////////////////////////////////////Modal call ////////////////////////
+
+const createModal = document.createElement('div')
+
+createModal.innerHTML = `<div class="call modal-overlay modal-overlay-hidden">
+  <button class="call__close modal__delete" type="button"></button>
+  <h3 class="call__title modal__title active">Заказать звонок</h3>
+  <input class="call__tel modal__tel" type="tel" placeholder="Телефон">
+  <div class="call__text modal__text">Нажимая “отправить”, вы даете согласие на <a class="modal__text--pink" href="#">обработку персональных данных</a> и соглашаетесь с нашей <a class="modal__text--pink" href="#">политикой конфиденциальности</a></div>
+  <button class="call__confirm modal__confirm pink-btn" type="submit">Отправить</button></div>`
+document.body.prepend(createModal)
+
+function modalCall() {
+  document.querySelector('.call').classList.remove('modal-overlay-hidden')
+  burgerBtn.classList.remove('open')
+  document.querySelector('.header__logo').classList.remove('open')
+  document.querySelector('.burger__container').classList.remove('open')
+  document.querySelector('.header__contacts').classList.remove('open')
+  document.querySelector('.header__servise').classList.remove('open')
+  main.classList.add('modal-blur')
+}
+
+const modalCallBtn = document.querySelector('.header__call')
+
+modalCallBtn.addEventListener('click', modalCall)
+
+document.querySelector('.call__close').addEventListener('click', () => {
+  document.querySelector('.call').classList.add('modal-overlay-hidden')
+  main.classList.remove('modal-blur')
+})
+
+document.querySelector('.call__confirm').addEventListener('click', () => {
+  document.querySelector('.call').classList.add('modal-overlay-hidden')
+  main.classList.remove('modal-blur')
+})
+
+////////////////////// modal feedback///////////////////////////////
+const createModalFbk = document.createElement('div')
+
+createModalFbk.innerHTML = `<div class="feedback modal-overlay modal-overlay-hidden">
+  <button class="feedback__close modal__delete" type="button"></button>
+  <h3 class="feedback__title modal__title active">Обратная связь</h3>
+  <input class="feedback__name modal__tel" type="name" placeholder="Имя">
+  <input class="feedback__tel modal__tel" type="tel" placeholder="Телефон">
+  <input class="feedback__email modal__tel" type="email" placeholder="Телефон">
+  <textarea class="feedback__textarea modal__textarea" placeholder="Сообщение"></textarea>
+  <div class="feedback__text modal__text">Нажимая “отправить”, вы даете согласие на <a class="modal__text--pink" href="#">обработку персональных данных</a> и соглашаетесь с нашей <a class="modal__text--pink" href="#">политикой конфиденциальности</a></div>
+  <button class="feedback__confirm modal__confirm pink-btn" type="submit">Отправить</button></div>`
+document.body.prepend(createModalFbk)
+
+function modalFeedback() {
+  document.querySelector('.feedback').classList.remove('modal-overlay-hidden')
+  burgerBtn.classList.remove('open')
+  document.querySelector('.header__logo').classList.remove('open')
+  document.querySelector('.burger__container').classList.remove('open')
+  document.querySelector('.header__contacts').classList.remove('open')
+  document.querySelector('.header__servise').classList.remove('open')
+  main.classList.add('modal-blur')
+}
+
+const modalFeedbackBtn = document.querySelector('.header__message')
+
+modalFeedbackBtn.addEventListener('click', modalFeedback)
+
+///////////////////////// close modal feedback ////////////////////
+document.querySelector('.feedback__close').addEventListener('click', () => {
+  document.querySelector('.feedback').classList.add('modal-overlay-hidden')
+  main.classList.remove('modal-blur')
+})
+
+document.querySelector('.feedback__confirm').addEventListener('click', () => {
+  document.querySelector('.modal-overlay').classList.add('modal-overlay-hidden')
+  main.classList.remove('modal-blur')
 })

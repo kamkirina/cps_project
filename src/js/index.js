@@ -203,7 +203,7 @@ function modalCall() {
   document.querySelector('.burger__container').classList.remove('open')
   document.querySelector('.header__contacts').classList.remove('open')
   document.querySelector('.header__servise').classList.remove('open')
-  main.classList.add('modal-blur')
+  document.querySelector('.wrapper').classList.add('modal-blur')
 }
 
 const modalCallBtn = document.querySelector('.header__call')
@@ -212,12 +212,12 @@ modalCallBtn.addEventListener('click', modalCall)
 
 document.querySelector('.call__close').addEventListener('click', () => {
   document.querySelector('.call').classList.add('modal-overlay-hidden')
-  main.classList.remove('modal-blur')
+  document.querySelector('.wrapper').classList.remove('modal-blur')
 })
 
 document.querySelector('.call__confirm').addEventListener('click', () => {
   document.querySelector('.call').classList.add('modal-overlay-hidden')
-  main.classList.remove('modal-blur')
+  document.querySelector('.wrapper').classList.remove('modal-blur')
 })
 
 ////////////////////// modal feedback///////////////////////////////
@@ -241,7 +241,7 @@ function modalFeedback() {
   document.querySelector('.burger__container').classList.remove('open')
   document.querySelector('.header__contacts').classList.remove('open')
   document.querySelector('.header__servise').classList.remove('open')
-  main.classList.add('modal-blur')
+  document.querySelector('.wrapper').classList.add('modal-blur')
 }
 
 const modalFeedbackBtn = document.querySelector('.header__message')
@@ -251,10 +251,10 @@ modalFeedbackBtn.addEventListener('click', modalFeedback)
 ///////////////////////// close modal feedback ////////////////////
 document.querySelector('.feedback__close').addEventListener('click', () => {
   document.querySelector('.feedback').classList.add('modal-overlay-hidden')
-  main.classList.remove('modal-blur')
+  document.querySelector('.wrapper').classList.remove('modal-blur')
 })
 
 document.querySelector('.feedback__confirm').addEventListener('click', () => {
   document.querySelector('.modal-overlay').classList.add('modal-overlay-hidden')
-  main.classList.remove('modal-blur')
+  document.querySelector('.wrapper').classList.remove('modal-blur')
 })

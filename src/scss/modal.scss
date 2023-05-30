@@ -72,3 +72,21 @@
   border: 1px solid #eaeaea;
   border-radius: 8px;
 }
+
+/* ////////////////////////////////////////////////////////////////// */
+
+@media (min-width: 1366px) {
+  .modal-overlay {
+    width: 440px;
+    height: 940px;
+    padding-top: 40px;
+    box-shadow: -2px 0px 4px rgba(69, 79, 126, 0.02),
+      16px 0px 52px rgba(14, 24, 80, 0.2);
+  }
+
+  .modal__delete {
+    position: absolute;
+    top: 32px;
+    left: -72px;
+  }
+}

@@ -17,7 +17,7 @@
     display: flex;
     gap: 16px;
     position: absolute;
-    bottom: -350px;
+    bottom: -200px;
     left: 22px;
     z-index: 6;
   }
@@ -99,7 +99,9 @@
       left: 60px;
     }
   }
-
+  .header__contacts.open {
+    bottom: -450px;
+  }
   .header__servise {
     margin-left: 42px;
   }
@@ -146,7 +148,7 @@
   .header__contacts {
     position: absolute;
     left: 24px;
-    bottom: -600px;
+    bottom: -458px;
     z-index: 10;
   }
 

@@ -30,7 +30,7 @@
 }
 
 .pink-btn {
-  background: #ff3e79;
+  background: $pink;
   border-radius: 16px;
   font-size: 12px;
   line-height: 24px;
@@ -76,7 +76,7 @@
 @media (min-width: 768px) {
   .slider__item--price {
     display: grid;
-    grid-template-columns: 50% 1fr 1fr 18%;
+    grid-template-columns: 50% 1fr 1fr 135px;
     width: 720px;
     flex-direction: row;
     justify-content: space-between;
@@ -84,6 +84,14 @@
     border-radius: 0;
     & h4 {
       display: none;
+    }
+    &:first-child {
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px;
+    }
+    &:last-child {
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px;
     }
   }
   .price__content {
@@ -97,9 +105,8 @@
 
   .price__title {
     display: grid;
-    grid-template-columns: 50% 1fr 1fr 18%;
+    grid-template-columns: 50% 1fr 1fr 135px;
     padding-left: 24px;
-    margin-bottom: 16px;
   }
   .price__text {
     margin-bottom: 0;

@@ -1,5 +1,8 @@
 import '../scss/style.scss'
 import Swiper, { Navigation, Pagination } from 'swiper'
+import { showSlides } from './showSlides'
+import { ShowSlidesToggle, showAll } from './showMoreSlides'
+import { burgerCloseModal, burgerOpen } from './burger'
 
 const main = document.querySelector('main')
 /* Swiper
@@ -42,16 +45,34 @@ function swiperMode() {
 
 /*On Load
  **************************************************************/
+
+const itemsBrand = document.querySelectorAll('.slider__item--brand')
+const itemsRpr = document.querySelectorAll('.slider__item--repair')
+
 window.addEventListener('load', function () {
   swiperMode()
-  showSlides()
+  if (window.innerWidth >= 768) {
+    showSlides(6, itemsBrand)
+    showSlides(3, itemsRpr)
+  }
+  if (window.innerWidth >= 1024) {
+    showSlides(8, itemsBrand)
+    showSlides(4, itemsRpr)
+  }
 })
 
 /*On Resize
  **************************************************************/
 window.addEventListener('resize', function () {
   swiperMode()
-  showSlides()
+  if (window.innerWidth >= 768) {
+    showSlides(6, itemsBrand)
+    showSlides(3, itemsRpr)
+  }
+  if (window.innerWidth >= 1024) {
+    showSlides(8, itemsBrand)
+    showSlides(4, itemsRpr)
+  }
 })
 
 /* //////////////// Burger menu //////////////////////////////*/
@@ -61,102 +82,47 @@ const burgerClose = document.querySelector('.burger__btn')
 const burgerContainer = document.querySelector('.header')
 
 burgerBtn.addEventListener('click', () => {
-  burgerBtn.classList.add('open')
-  document.querySelector('.header__logo').classList.add('open')
-  document.querySelector('.burger__container').classList.add('open')
-  document.querySelector('.header__contacts').classList.add('open')
-  document.querySelector('.header__servise').classList.add('open')
-  main.classList.add('modal-blur')
+  burgerOpen(burgerBtn)
 })
 
 burgerClose.addEventListener('click', () => {
-  burgerBtn.classList.remove('open')
-  document.querySelector('.header__logo').classList.remove('open')
-  document.querySelector('.burger__container').classList.remove('open')
-  document.querySelector('.header__contacts').classList.remove('open')
-  document.querySelector('.header__servise').classList.remove('open')
-  main.classList.remove('modal-blur')
+  burgerCloseModal(burgerBtn)
 })
+
+/////////////////////////////////close modal //////////////////////////////
 
 document.addEventListener('click', (e) => {
   const withinBoundaries = e.composedPath().includes(burgerContainer)
 
   if (!withinBoundaries) {
-    burgerBtn.classList.remove('open')
-    document.querySelector('.header__logo').classList.remove('open')
-    document.querySelector('.burger__container').classList.remove('open')
-    document.querySelector('.header__contacts').classList.remove('open')
-    document.querySelector('.header__servise').classList.remove('open')
-    main.classList.remove('modal-blur')
+    burgerCloseModal(burgerBtn)
+    callClose()
+    feedbackClose()
   }
 })
-
-///////////////number of slides per list//////////////////////
-
-let numberBrands
-let numberRepair
-const itemsBrand = document.querySelectorAll('.slider__item--brand')
-const itemsRpr = document.querySelectorAll('.slider__item--repair')
-
-function showSlides() {
-  if (window.innerWidth >= 768) {
-    numberBrands = 6
-    numberRepair = 3
-
-    for (let i = numberBrands; i < itemsBrand.length; i++) {
-      itemsBrand[i].classList.add('hidden')
-    }
-    for (let i = numberRepair; i < itemsRpr.length; i++) {
-      itemsRpr[i].classList.add('hidden')
-    }
-  }
-  if (window.innerWidth >= 1024) {
-    numberBrands = 8
-    numberRepair = 4
-    itemsBrand.forEach((e) => {
-      e.classList.remove('hidden')
-    })
-    for (let i = numberBrands; i < itemsBrand.length; i++) {
-      itemsBrand[i].classList.add('hidden')
-    }
-
-    itemsRpr.forEach((e) => {
-      e.classList.remove('hidden')
-    })
-    for (let i = numberRepair; i < itemsRpr.length; i++) {
-      itemsRpr[i].classList.add('hidden')
-    }
-  }
-}
 
 ////////////show more and hide for brands/////////////////////
 
 const showMoreBtn = document.querySelector('.brands__show')
+const hideBtn = document.querySelector('.brands__hide')
+const sliderWrapper = document.querySelector('.slider__wrapper')
 
 showMoreBtn.addEventListener('click', (event) => {
-  event.preventDefault()
-  showMoreBtn.classList.add('slider__show--disable')
-  document.querySelector('.brands__hide').classList.add('slider__hide--active')
-  document
-    .querySelector('.slider__wrapper')
-    .classList.add('slider__wrapper--show')
-  for (let i = 0; i < itemsBrand.length; i++) {
-    itemsBrand[i].classList.remove('hidden')
-  }
+  sliderWrapper.classList.add('slider__wrapper--show')
+  ShowSlidesToggle(showMoreBtn, hideBtn, event)
+  showAll(itemsBrand)
 })
 
-const hideBrandBtn = document.querySelector('.brands__hide')
+hideBtn.addEventListener('click', (event) => {
+  ShowSlidesToggle(showMoreBtn, hideBtn, event)
+  sliderWrapper.classList.remove('slider__wrapper--show')
 
-hideBrandBtn.addEventListener('click', (event) => {
-  event.preventDefault()
-  showMoreBtn.classList.remove('slider__show--disable')
-  document
-    .querySelector('.brands__hide')
-    .classList.remove('slider__hide--active')
-  document
-    .querySelector('.slider__wrapper')
-    .classList.remove('slider__wrapper--show')
-  showSlides()
+  if (window.innerWidth >= 768) {
+    showSlides(6, itemsBrand)
+  }
+  if (window.innerWidth >= 1024) {
+    showSlides(8, itemsBrand)
+  }
 })
 
 ////////////show more and hide for repair/////////////////////
@@ -165,23 +131,19 @@ const showMoreBtnRpr = document.querySelector('.repair__show')
 const hideRprBtn = document.querySelector('.repair__hide')
 
 showMoreBtnRpr.addEventListener('click', (event) => {
-  event.preventDefault()
-  showMoreBtnRpr.classList.add('slider__show--disable')
-  hideRprBtn.classList.add('slider__hide--active')
-
-  for (let i = 0; i < itemsRpr.length; i++) {
-    itemsRpr[i].classList.remove('hidden')
-  }
+  ShowSlidesToggle(showMoreBtnRpr, hideRprBtn, event)
+  showAll(itemsRpr)
 })
 
 hideRprBtn.addEventListener('click', (event) => {
-  event.preventDefault()
-  showMoreBtnRpr.classList.remove('slider__show--disable')
-  document
-    .querySelector('.repair__hide')
-    .classList.remove('slider__hide--active')
+  ShowSlidesToggle(showMoreBtnRpr, hideRprBtn, event)
 
-  showSlides()
+  if (window.innerWidth >= 768) {
+    showSlides(3, itemsRpr)
+  }
+  if (window.innerWidth >= 1024) {
+    showSlides(4, itemsRpr)
+  }
 })
 
 ////////////////////////////////////Modal call ////////////////////////
@@ -195,6 +157,8 @@ createModal.innerHTML = `<div class="call modal-overlay modal-overlay-hidden">
   <div class="call__text modal__text">Нажимая “отправить”, вы даете согласие на <a class="modal__text--pink" href="#">обработку персональных данных</a> и соглашаетесь с нашей <a class="modal__text--pink" href="#">политикой конфиденциальности</a></div>
   <button class="call__confirm modal__confirm pink-btn" type="submit">Отправить</button></div>`
 document.body.prepend(createModal)
+
+const modalOverlay = document.querySelector('.modal-overlay')
 
 function modalCall() {
   document.querySelector('.call').classList.remove('modal-overlay-hidden')
@@ -211,14 +175,17 @@ const modalCallBtn = document.querySelector('.header__call')
 modalCallBtn.addEventListener('click', modalCall)
 
 document.querySelector('.call__close').addEventListener('click', () => {
-  document.querySelector('.call').classList.add('modal-overlay-hidden')
-  document.querySelector('.wrapper').classList.remove('modal-blur')
+  callClose()
 })
 
 document.querySelector('.call__confirm').addEventListener('click', () => {
+  callClose()
+})
+
+function callClose() {
   document.querySelector('.call').classList.add('modal-overlay-hidden')
   document.querySelector('.wrapper').classList.remove('modal-blur')
-})
+}
 
 ////////////////////// modal feedback///////////////////////////////
 const createModalFbk = document.createElement('div')
@@ -249,12 +216,15 @@ const modalFeedbackBtn = document.querySelector('.header__message')
 modalFeedbackBtn.addEventListener('click', modalFeedback)
 
 ///////////////////////// close modal feedback ////////////////////
-document.querySelector('.feedback__close').addEventListener('click', () => {
+function feedbackClose() {
   document.querySelector('.feedback').classList.add('modal-overlay-hidden')
   document.querySelector('.wrapper').classList.remove('modal-blur')
+}
+
+document.querySelector('.feedback__close').addEventListener('click', () => {
+  feedbackClose()
 })
 
 document.querySelector('.feedback__confirm').addEventListener('click', () => {
-  document.querySelector('.modal-overlay').classList.add('modal-overlay-hidden')
-  document.querySelector('.wrapper').classList.remove('modal-blur')
+  feedbackClose()
 })

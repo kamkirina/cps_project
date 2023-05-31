@@ -11,6 +11,7 @@
   border-bottom: 1px solid #d9fff5;
   padding: 0 16px;
 }
+
 .header__contacts {
   display: none;
   &.open {
@@ -105,7 +106,7 @@
     }
   }
   .header__contacts.open {
-    bottom: -436px;
+    top: 788px;
   }
   .header__servise {
     margin-left: 42px;

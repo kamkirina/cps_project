@@ -100,7 +100,7 @@
     }
   }
   .header__contacts.open {
-    bottom: -450px;
+    bottom: -436px;
   }
   .header__servise {
     margin-left: 42px;
@@ -108,11 +108,6 @@
 
   .header__links {
     display: flex;
-  }
-  .header__contacts {
-    display: flex;
-    padding-top: 24px;
-    padding-bottom: 20px;
   }
 
   .servise::before {
@@ -146,9 +141,10 @@
   }
 
   .header__contacts {
+    display: block;
     position: absolute;
-    left: 24px;
-    bottom: -458px;
+    right: 86%;
+    top: 110%;
     z-index: 10;
   }
 

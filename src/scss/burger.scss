@@ -168,8 +168,9 @@
 
 @media (min-width: 1366px) {
   .burger__container {
-    width: 305px;
-    transform: translateX(0);
+    position: relative;
+    left: -624px;
+    transform: none;
     box-shadow: none;
   }
 
@@ -179,5 +180,13 @@
   .burger__logo {
     display: block;
     margin-left: 0;
+  }
+}
+
+///////////////////////////////////////////////////////////
+
+@media (min-width: 1440px) {
+  .burger__container {
+    left: -718px;
   }
 }

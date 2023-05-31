@@ -13,14 +13,17 @@
 }
 
 .header__contacts {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-200%, 560px);
+  transition: all ease;
+  transition-duration: 1s;
   &.open {
     display: flex;
     gap: 16px;
-    position: absolute;
-    top: 560px;
-    left: 22px;
     z-index: 6;
+    transform: translate(10%, 560px);
   }
 }
 
@@ -105,8 +108,13 @@
       left: 60px;
     }
   }
+
+  .header__contacts {
+    transform: translate(-200%, 780px);
+  }
+
   .header__contacts.open {
-    top: 788px;
+    transform: translate(10%, 780px);
   }
   .header__servise {
     margin-left: 42px;
@@ -147,10 +155,9 @@
   }
 
   .header__contacts {
-    display: block;
-    position: absolute;
-    right: 86%;
-    top: 110%;
+    transform: none;
+    left: 2%;
+    top: 805px;
     z-index: 10;
   }
 
@@ -189,5 +196,8 @@
 @media (min-width: 1440px) {
   .container {
     width: 1120px;
+  }
+  .header__contacts {
+    left: 1.5%;
   }
 }

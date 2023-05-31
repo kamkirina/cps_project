@@ -8,7 +8,8 @@ html {
 
 a {
   text-decoration: none;
-  color: inherit; }
+  color: inherit;
+  cursor: pointer; }
 
 p {
   margin: 0; }
@@ -20,7 +21,8 @@ img {
 button {
   border: none;
   background-color: transparent;
-  padding: 0; }
+  padding: 0;
+  cursor: pointer; }
 
 h2,
 h3,
@@ -84,7 +86,8 @@ li {
     display: none; }
 
 .servise__check {
-  margin-left: 16px; }
+  margin-left: 16px;
+  cursor: pointer; }
 
 .servise::before {
   position: absolute;
@@ -95,6 +98,9 @@ li {
   border-radius: 1px;
   bottom: 24px;
   left: -20px; }
+
+.servise__repair {
+  cursor: pointer; }
 
 /* //////////////////////////////////////////////////////////////////////*/
 @media (min-width: 768px) {
@@ -115,15 +121,11 @@ li {
       bottom: 6px;
       left: 60px; }
   .header__contacts.open {
-    bottom: -450px; }
+    bottom: -436px; }
   .header__servise {
     margin-left: 42px; }
   .header__links {
     display: flex; }
-  .header__contacts {
-    display: flex;
-    padding-top: 24px;
-    padding-bottom: 20px; }
   .servise::before {
     bottom: 28px; }
   .header__message,
@@ -145,9 +147,10 @@ li {
     align-items: flex-start;
     height: 0px; }
   .header__contacts {
+    display: block;
     position: absolute;
-    left: 24px;
-    bottom: -458px;
+    right: 86%;
+    top: 110%;
     z-index: 10; }
   .header__menu {
     display: none; }
@@ -469,14 +472,19 @@ li {
 /*//////////////////////////////////////////////////*/
 @media (min-width: 1366px) {
   .burger__container {
-    width: 305px;
-    transform: translateX(0);
+    position: relative;
+    left: -624px;
+    transform: none;
     box-shadow: none; }
   .burger__btn {
     display: none; }
   .burger__logo {
     display: block;
     margin-left: 0; } }
+
+@media (min-width: 1440px) {
+  .burger__container {
+    left: -718px; } }
 
 /**
  * Swiper 9.3.2
@@ -857,7 +865,8 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader,
   align-items: center;
   color: #7e7e82;
   padding: 0 16px;
-  background: linear-gradient(-270deg, #f8f8f8 0%, #ffffff 98.61%); }
+  background: linear-gradient(-270deg, #f8f8f8 0%, #ffffff 98.61%);
+  border-top: 2px solid #b8ffec; }
 
 .slider__swiper {
   background-color: #f2f2f2;
@@ -1068,7 +1077,7 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader,
 @media (min-width: 768px) {
   .slider__item--price {
     display: grid;
-    grid-template-columns: 50% 1fr 1fr 18%;
+    grid-template-columns: 50% 1fr 1fr 135px;
     width: 720px;
     flex-direction: row;
     justify-content: space-between;
@@ -1076,6 +1085,12 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader,
     border-radius: 0; }
     .slider__item--price h4 {
       display: none; }
+    .slider__item--price:first-child {
+      border-top-right-radius: 6px;
+      border-top-left-radius: 6px; }
+    .slider__item--price:last-child {
+      border-bottom-right-radius: 6px;
+      border-bottom-left-radius: 6px; }
   .price__content {
     padding-left: 24px;
     padding-right: 24px; }
@@ -1084,9 +1099,8 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader,
     margin-bottom: 24px; }
   .price__title {
     display: grid;
-    grid-template-columns: 50% 1fr 1fr 18%;
-    padding-left: 24px;
-    margin-bottom: 16px; }
+    grid-template-columns: 50% 1fr 1fr 135px;
+    padding-left: 24px; }
   .price__text {
     margin-bottom: 0; }
   .price__btn {
@@ -1207,7 +1221,9 @@ swiper-container:not(.swiper-watch-progress) .swiper-lazy-preloader,
   .modal__delete {
     position: absolute;
     top: 32px;
-    left: -72px; } }
+    left: -72px; }
+  .wrapper {
+    margin: 0 auto; } }
 
 @font-face {
   font-family: 'TTLakes';
@@ -1228,16 +1244,14 @@ body {
   -webkit-filter: blur(300px);
           filter: blur(300px); }
 
-@media (min-width: 1440px) {
-  .container {
-    width: 1120px;
-    margin-left: auto;
-    margin-right: 0; } }
-
-/*//////////////////////////////////////////////////*/
-@media (min-width: 1520px) {
+@media (min-width: 1366px) {
   .wrapper {
-    width: 1520px;
+    width: 1344px;
+    margin: 0 auto; } }
+
+@media (min-width: 1440px) {
+  .wrapper {
+    width: 1440px;
     margin: 0 auto; } }
 
 

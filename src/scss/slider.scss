@@ -6,8 +6,9 @@
   align-items: center;
   color: $subTitle;
   padding: 0 16px;
-  background: linear-gradient(-270deg, #f8f8f8 0%, #ffffff 98.61%);
-  border-top: 2px solid $border;
+  background: linear-gradient(270deg, #f8f8f8 0%, #ffffff 98.61%);
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  border-top: 1px solid $border;
 }
 
 .slider__swiper {
@@ -94,7 +95,7 @@
     margin-bottom: 80px;
   }
   .slider__item {
-    width: 224px;
+    width: 30%;
     margin-bottom: 0;
   }
 

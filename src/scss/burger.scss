@@ -59,7 +59,7 @@
 .burger__nav {
   display: flex;
   flex-direction: column;
-  margin-bottom: 88px;
+  margin-bottom: 32px;
 }
 
 .burger__nav-item {
@@ -105,11 +105,17 @@
 .burger__links {
   margin-bottom: 16px;
 }
+
 .burger__contacts {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 16px;
   margin-bottom: 22px;
+}
+
+.burger__contacts-icons {
+  display: flex;
+  gap: 16px;
 }
 
 .burger__tel {

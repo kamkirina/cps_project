@@ -159,6 +159,7 @@ createModal.innerHTML = `<div class="call modal-overlay modal-overlay-hidden">
 document.body.prepend(createModal)
 
 const modalOverlay = document.querySelector('.modal-overlay')
+const wrapper = document.querySelector('.wrapper')
 
 function modalCall() {
   document.querySelector('.call').classList.remove('modal-overlay-hidden')
@@ -167,7 +168,8 @@ function modalCall() {
   document.querySelector('.burger__container').classList.remove('open')
   document.querySelector('.header__contacts').classList.remove('open')
   document.querySelector('.header__servise').classList.remove('open')
-  document.querySelector('.wrapper').classList.add('modal-blur')
+  document.querySelector('body').classList.add('overflow-hidden')
+  wrapper.classList.add('modal-blur')
 }
 
 const modalCallBtn = document.querySelector('.header__call')
@@ -185,6 +187,7 @@ document.querySelector('.call__confirm').addEventListener('click', () => {
 function callClose() {
   document.querySelector('.call').classList.add('modal-overlay-hidden')
   document.querySelector('.wrapper').classList.remove('modal-blur')
+  document.querySelector('body').classList.remove('overflow-hidden')
 }
 
 ////////////////////// modal feedback///////////////////////////////
@@ -208,6 +211,7 @@ function modalFeedback() {
   document.querySelector('.burger__container').classList.remove('open')
   document.querySelector('.header__contacts').classList.remove('open')
   document.querySelector('.header__servise').classList.remove('open')
+  document.querySelector('body').classList.add('overflow-hidden')
   document.querySelector('.wrapper').classList.add('modal-blur')
 }
 
@@ -219,6 +223,7 @@ modalFeedbackBtn.addEventListener('click', modalFeedback)
 function feedbackClose() {
   document.querySelector('.feedback').classList.add('modal-overlay-hidden')
   document.querySelector('.wrapper').classList.remove('modal-blur')
+  document.querySelector('body').classList.remove('overflow-hidden')
 }
 
 document.querySelector('.feedback__close').addEventListener('click', () => {

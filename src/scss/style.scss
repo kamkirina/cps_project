@@ -29,6 +29,10 @@ body {
   padding: 0;
 }
 
+.overflow-hidden {
+  overflow: hidden;
+}
+
 .modal-blur {
   filter: blur(300px);
 }

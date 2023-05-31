@@ -64,6 +64,7 @@
 
 .servise__check {
   margin-left: 16px;
+  cursor: pointer;
 }
 .servise::before {
   position: absolute;
@@ -74,6 +75,10 @@
   border-radius: 1px;
   bottom: 24px;
   left: -20px;
+}
+
+.servise__repair {
+  cursor: pointer;
 }
 
 /* //////////////////////////////////////////////////////////////////////*/

@@ -173,8 +173,10 @@ function modalCall() {
 }
 
 const modalCallBtn = document.querySelector('.header__call')
+const modalCallBtnTop = document.querySelector('.call-top')
 
 modalCallBtn.addEventListener('click', modalCall)
+modalCallBtnTop.addEventListener('click', modalCall)
 
 document.querySelector('.call__close').addEventListener('click', () => {
   callClose()
@@ -216,8 +218,10 @@ function modalFeedback() {
 }
 
 const modalFeedbackBtn = document.querySelector('.header__message')
+const modalFeedbackBtnTop = document.querySelector('.message-top')
 
 modalFeedbackBtn.addEventListener('click', modalFeedback)
+modalFeedbackBtnTop.addEventListener('click', modalFeedback)
 
 ///////////////////////// close modal feedback ////////////////////
 function feedbackClose() {

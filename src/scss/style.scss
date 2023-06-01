@@ -36,21 +36,3 @@ body {
 .modal-blur {
   filter: blur(300px);
 }
-
-//////////////////////////
-
-@media (min-width: 1366px) {
-  .wrapper {
-    width: 1344px;
-    margin: 0 auto;
-  }
-}
-
-//////////////////////////
-
-@media (min-width: 1440px) {
-  .wrapper {
-    width: 1440px;
-    margin: 0 auto;
-  }
-}

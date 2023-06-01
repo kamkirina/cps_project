@@ -169,11 +169,8 @@
 /* ////////////////////////////////////////////////////////////////// */
 
 @media (min-width: 1440px) {
-  .container {
-    width: 1120px;
-  }
   .description__image {
-    width: 550px;
+    width: 60%;
   }
 
   .description__title {
@@ -211,5 +208,11 @@
   .description__button_3 {
     display: block;
     margin-top: 14px;
+  }
+}
+
+@media (min-width: 1700px) {
+  .description__image {
+    width: 100%;
   }
 }

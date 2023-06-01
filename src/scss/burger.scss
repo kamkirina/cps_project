@@ -174,8 +174,9 @@
 
 @media (min-width: 1366px) {
   .burger__container {
-    position: relative;
-    left: -626px;
+    position: absolute;
+    left: 0;
+    top: 0;
     transform: none;
     box-shadow: none;
   }
@@ -190,9 +191,3 @@
 }
 
 ///////////////////////////////////////////////////////////
-
-@media (min-width: 1440px) {
-  .burger__container {
-    left: -718px;
-  }
-}

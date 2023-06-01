@@ -77,7 +77,7 @@
   .slider__item--price {
     display: grid;
     grid-template-columns: 50% 1fr 1fr 135px;
-    width: 720px;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -105,7 +105,7 @@
 
   .price__title {
     display: grid;
-    grid-template-columns: 50% 1fr 1fr 135px;
+    grid-template-columns: 51% 17% 100px;
     padding-left: 24px;
     padding-bottom: 12px;
   }
@@ -126,15 +126,8 @@
 ////////////////////////////////////////////////
 
 @media (min-width: 1024px) {
-  .slider__item--price {
-    width: 976px;
-  }
-}
-
-////////////////////////////////////////////////
-
-@media (min-width: 1440px) {
-  .slider__item--price {
-    width: 1058px;
+  .price__title {
+    display: grid;
+    grid-template-columns: 51% 18% 100px;
   }
 }
